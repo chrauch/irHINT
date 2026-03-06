@@ -2024,6 +2024,7 @@ HINT_M_SubsSortByRecordId_CM::~HINT_M_SubsSortByRecordId_CM()
         delete[] this->pRepsInIds[l];
         delete[] this->pRepsInTimestamps[l];
         delete[] this->pRepsAftIds[l];
+        delete[] this->pRepsAftTimestamps[l];
     }
     
     delete[] this->pOrgsInIds;
@@ -2033,6 +2034,7 @@ HINT_M_SubsSortByRecordId_CM::~HINT_M_SubsSortByRecordId_CM()
     delete[] this->pRepsInIds;
     delete[] this->pRepsInTimestamps;
     delete[] this->pRepsAftIds;
+    delete[] this->pRepsAftTimestamps;
 }
 
 

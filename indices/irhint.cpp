@@ -441,10 +441,10 @@ irHINTa::~irHINTa()
         delete[] this->pRepsAft[l];
     }
 
-    delete this->pOrgsIn;
-    delete this->pOrgsAft;
-    delete this->pRepsIn;
-    delete this->pRepsAft;
+    delete[] this->pOrgsIn;
+    delete[] this->pOrgsAft;
+    delete[] this->pRepsIn;
+    delete[] this->pRepsAft;
 }
 
 

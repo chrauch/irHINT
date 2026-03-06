@@ -218,7 +218,11 @@ size_t TemporalInvertedFile_HINTGamma::getSize()
 TemporalInvertedFile_HINTGamma::~TemporalInvertedFile_HINTGamma()
 {
     for (auto iterL = this->hlists.begin(); iterL != this->hlists.end(); iterL++)
+    {
         delete iterL->second;
+        iterL->second = nullptr;
+    }
+    this->hlists.clear();
 }
 
 
@@ -400,6 +404,11 @@ public:
 inline void mwayMergeSort(vector<RelationId> &vec_candidates, RelationId &result)
 {
 #if defined(MWAY_MERGESORT_STL)
+    if (vec_candidates.empty())
+    {
+        result.clear();
+        return;
+    }
     result.swap(vec_candidates[0]);
     for (auto i = 1; i < vec_candidates.size(); i++)
     {
@@ -408,6 +417,11 @@ inline void mwayMergeSort(vector<RelationId> &vec_candidates, RelationId &result
         result.swap(res2);
     }
 #elif defined(MWAY_MERGESORT_STL_INPLACE)
+    if (vec_candidates.empty())
+    {
+        result.clear();
+        return;
+    }
     result.swap(vec_candidates[0]);
     for (auto i = 1; i < vec_candidates.size(); i++)
     {

@@ -231,6 +231,8 @@ void OneDimensionalGrid::insert(const Record &r)
 // Querying
 void OneDimensionalGrid::moveOut_checkBoth_gOverlaps(const RangeQuery &q, RelationId &candidates)
 {
+    if (q.start > this->gend || q.end < this->gstart) return;
+
     RelationIterator iter, iterBegin, iterEnd;
     auto s_pid = (max(q.start,gstart) == this->gend)? this->numPartitionsMinus1: (max(q.start,gstart)-gstart)/this->partitionExtent;
     auto e_pid = (min(q.end,gend)     == this->gend)? this->numPartitionsMinus1: (min(q.end,gend)-gstart)/this->partitionExtent;
@@ -361,6 +363,8 @@ inline void mergeSort_withDeduplication(Relation &partition, RelationId &candida
 
 void OneDimensionalGrid::interesect_gOverlaps(const RangeQuery &q, RelationId &candidates)
 {
+    if (q.start > this->gend || q.end < this->gstart) return;
+
     RelationId result;
     auto s_pid = (max(q.start,gstart) == this->gend)? this->numPartitionsMinus1: (max(q.start,gstart)-gstart)/this->partitionExtent;
     auto e_pid = (min(q.end,gend)     == this->gend)? this->numPartitionsMinus1: (min(q.end,gend)-gstart)/this->partitionExtent;
@@ -459,6 +463,8 @@ void OneDimensionalGrid::interesect_gOverlaps(const RangeQuery &q, RelationId &c
 
 void OneDimensionalGrid::interesectAndOutput_gOverlaps(const RangeQuery &q, RelationId &candidates, RelationId &result)
 {
+    if (q.start > this->gend || q.end < this->gstart) return;
+
     auto s_pid = (max(q.start,gstart) == this->gend)? this->numPartitionsMinus1: (max(q.start,gstart)-gstart)/this->partitionExtent;
     auto e_pid = (min(q.end,gend)     == this->gend)? this->numPartitionsMinus1: (min(q.end,gend)-gstart)/this->partitionExtent;
 
@@ -805,6 +811,8 @@ inline void mergeSort_withDeduplication(RelationStart &partition, RelationId &ca
 
 void OneDimensionalGrid_RecordStart::interesect_gOverlaps(const RangeQuery &q, RelationId &candidates)
 {
+    if (q.start > this->gend || q.end < this->gstart) return;
+
     RelationId result;
     auto s_pid = (max(q.start,gstart) == this->gend)? this->numPartitionsMinus1: (max(q.start,gstart)-gstart)/this->partitionExtent;
     auto e_pid = (min(q.end,gend)     == this->gend)? this->numPartitionsMinus1: (min(q.end,gend)-gstart)/this->partitionExtent;
@@ -903,6 +911,8 @@ void OneDimensionalGrid_RecordStart::interesect_gOverlaps(const RangeQuery &q, R
 
 void OneDimensionalGrid_RecordStart::interesectAndOutput_gOverlaps(const RangeQuery &q, RelationId &candidates, RelationId &result)
 {
+    if (q.start > this->gend || q.end < this->gstart) return;
+
     auto s_pid = (max(q.start,gstart) == this->gend)? this->numPartitionsMinus1: (max(q.start,gstart)-gstart)/this->partitionExtent;
     auto e_pid = (min(q.end,gend)     == this->gend)? this->numPartitionsMinus1: (min(q.end,gend)-gstart)/this->partitionExtent;
 
