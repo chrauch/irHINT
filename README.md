@@ -1,6 +1,9 @@
 # Fast Indexing for Temporal Information Retrieval
 <p align="justify">Temporal aspects have received tons of interest in Information Retrieval (IR) and related fields, including database search. The focus of temporal IR is on improving the effectiveness of search by exploiting temporal information in objects and queries. In this work, we study efficient indexing for the fundamental time-travel IR query. Given such a query q with a time interval of interest and a set of descriptive elements (e.g., keywords), the goal is to retrieve all data objects (e.g., documents) whose time interval overlaps with query's and their description contains the elements in q. Existing methods extend the inverted index to answer time-travel IR queries, with simple but ineffective temporal indexing. We propose new methods which capitalize on the state-of-the-art interval index HINT in two ways; either by extending again the inverted index or adopting the time-first irHINT approach which directly builds on HINT. Our experiments showed that irHINT outperforms all IR-first methods, while exhibiting good indexing and updating costs.</p>
 
+Source code from the following publication:
+- <p align="justify">Panagiotis Bouros and Nikos Mamoulis, <i>Relevance Queries for Interval Data</i>, Proceedings of the ACM on Management of Data (PACMMOD), https://doi.org/10.1145/3725343, Vol 3, No 3, June 2025.<br> 
+  To be presented at the 2025 ACM International Conference on Management of Data (ACM SIGMOD'25), Berlin, Germany, June 22-27, 2025</p>
 
 ## Dependencies
 - g++/gcc
