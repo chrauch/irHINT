@@ -3,7 +3,7 @@
 
 Source code from the following publication:
 - <p align="justify">Christian Rauch and Panagiotis Bouros, <i>Fast Indexing for Temporal Information Retrieval</i>, Proceedings of the ACM on Management of Data (PACMMOD), https://doi.org/10.1145/3749164, Vol 3, No 4, September 2025.<br> 
-  To be presented at the 2026 ACM International Conference on Management of Data (<a href="https://2026.sigmod.org">ACM SIGMOD'25</a>), Bengaluru, India, on May 31 - June 05, 2026</p>
+  To be presented at the 2026 ACM International Conference on Management of Data (<a href="https://2026.sigmod.org">ACM SIGMOD</a>), Bengaluru, India, on May 31 - June 05, 2026</p>
 
 ## Dependencies
 - g++/gcc
